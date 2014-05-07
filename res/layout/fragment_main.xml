@@ -1,0 +1,136 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#33B250"
+    android:layout_gravity="center"
+    android:layout_centerHorizontal = "true"
+    tools:context="com.tangibledesign.pintu.MainActivity$PlaceholderFragment" >
+    
+    
+    <RelativeLayout
+	    android:layout_height="wrap_content"
+	    android:layout_width="fill_parent"
+	    android:layout_marginTop = "50dp"
+	    android:id="@+id/playLinearLay"
+	    android:orientation="horizontal">
+	    
+     <TextView
+        android:id="@+id/textViewPlay"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        
+    	android:gravity="center"
+        android:textSize="34sp"
+        android:textColor="#FFFFFF"
+        android:background="#0775B2"
+        android:fontFamily="sans-serif"
+        android:text="@string/play" />
+
+     <ImageView
+         android:id="@+id/imageViewPlay"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentLeft="true"
+         android:layout_centerVertical="true"
+         android:layout_marginLeft="55dp"
+         android:contentDescription="@string/desc"
+         android:src="@drawable/play" />
+     
+	</RelativeLayout>
+	
+    
+     <RelativeLayout
+	    android:layout_height="wrap_content"
+	    android:layout_width="fill_parent"
+	    android:layout_marginTop = "25dp"
+	    android:id="@+id/learnLinearLay"
+	    android:orientation="horizontal">
+     
+     <TextView
+        android:id="@+id/textViewLearn"
+       	android:layout_width="fill_parent"
+        android:layout_height="60dp"
+    	android:gravity="center"
+        android:textSize="34sp"
+        android:textColor="#FFFFFF"
+        android:background="#0775B2"
+        android:fontFamily="sans-serif"
+        android:text="@string/learn" />
+
+     <ImageView
+         android:id="@+id/imageViewLearn"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentLeft="true"
+         android:layout_centerVertical="true"
+         android:layout_marginLeft="55dp"
+         android:contentDescription="@string/desc"
+         android:src="@drawable/learn" />
+     
+	</RelativeLayout>
+	
+
+    <RelativeLayout
+	    android:layout_height="wrap_content"
+	    android:layout_width="fill_parent"
+	    android:layout_marginTop = "25dp"
+	    android:id="@+id/scoresLinearLay"
+	    android:orientation="horizontal">
+	<TextView
+        android:id="@+id/textViewScores"
+       	android:layout_width="fill_parent"
+        android:layout_height="60dp"
+    	android:gravity="center"
+        android:textSize="34sp"
+        android:textColor="#FFFFFF"
+        android:background="#0775B2"
+        android:fontFamily="sans-serif"
+        android:text="@string/scores" />
+	
+     <ImageView
+         android:id="@+id/imageViewScores"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentLeft="true"
+         android:layout_centerVertical="true"
+         android:layout_marginLeft="55dp"
+         android:contentDescription="@string/desc"
+         android:src="@drawable/scores" />
+     
+	</RelativeLayout>
+	
+
+     <RelativeLayout
+	    android:layout_height="wrap_content"
+	    android:layout_width="fill_parent"
+	    android:layout_marginTop = "25dp"
+	    android:id="@+id/helpLinearLay"
+	    android:orientation="horizontal">
+     
+	<TextView
+        android:id="@+id/textViewHelp"
+       	android:layout_width="fill_parent"
+        android:layout_height="60dp"
+    	android:gravity="center"
+        android:textSize="34sp"
+        android:textColor="#FFFFFF"
+        android:background="#0775B2"
+        android:fontFamily="sans-serif"
+        android:text="@string/help" />
+	
+     <ImageView
+         android:id="@+id/imageViewHelp"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentLeft="true"
+         android:layout_centerVertical="true"
+         android:layout_marginLeft="55dp"
+         android:contentDescription="@string/desc"
+         android:src="@drawable/help" />
+     
+	</RelativeLayout>
+	
+
+</LinearLayout>
