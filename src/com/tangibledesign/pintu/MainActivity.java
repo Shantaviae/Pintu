@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.content.Intent;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -60,6 +61,12 @@ public class MainActivity extends ActionBarActivity {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             return rootView;
         }
+    }
+    
+    /** Called when the user clicks the play button on the home page */
+    public void startGame(View view) {
+        //Start game (LEVEL easy) activity 
+    	Intent intent = new Intent(this, EasyActivity.class);
     }
 
 }

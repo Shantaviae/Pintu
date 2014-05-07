@@ -1080,8 +1080,10 @@ containing a value of this type.
         public static final int help=0x7f020057;
         public static final int ic_launcher=0x7f020058;
         public static final int learn=0x7f020059;
-        public static final int play=0x7f02005a;
-        public static final int scores=0x7f02005b;
+        public static final int pintulogo=0x7f02005a;
+        public static final int pintulogo2=0x7f02005b;
+        public static final int play=0x7f02005c;
+        public static final int scores=0x7f02005d;
     }
     public static final class id {
         public static final int action_bar=0x7f05001c;
@@ -1095,7 +1097,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f050016;
         public static final int action_menu_presenter=0x7f050017;
         public static final int action_mode_close_button=0x7f050024;
-        public static final int action_settings=0x7f050049;
+        public static final int action_settings=0x7f05004a;
         public static final int activity_chooser_view_content=0x7f050025;
         public static final int always=0x7f05000b;
         public static final int beginning=0x7f050011;
@@ -1110,28 +1112,29 @@ containing a value of this type.
         public static final int end=0x7f050013;
         public static final int expand_activities_button=0x7f050026;
         public static final int expanded_menu=0x7f05002c;
-        public static final int helpLinearLay=0x7f050046;
+        public static final int helpLinearLay=0x7f050047;
         public static final int home=0x7f050014;
         public static final int homeAsUp=0x7f050005;
         public static final int icon=0x7f05002a;
         public static final int ifRoom=0x7f05000a;
         public static final int image=0x7f050027;
-        public static final int imageViewHelp=0x7f050048;
-        public static final int imageViewLearn=0x7f050042;
-        public static final int imageViewPlay=0x7f05003f;
-        public static final int imageViewScores=0x7f050045;
-        public static final int learnLinearLay=0x7f050040;
+        public static final int imageViewHelp=0x7f050049;
+        public static final int imageViewLearn=0x7f050043;
+        public static final int imageViewLogo=0x7f05003d;
+        public static final int imageViewPlay=0x7f050040;
+        public static final int imageViewScores=0x7f050046;
+        public static final int learnLinearLay=0x7f050041;
         public static final int listMode=0x7f050001;
         public static final int list_item=0x7f050029;
         public static final int middle=0x7f050012;
         public static final int never=0x7f050009;
         public static final int none=0x7f050010;
         public static final int normal=0x7f050000;
-        public static final int playLinearLay=0x7f05003d;
+        public static final int playLinearLay=0x7f05003e;
         public static final int progress_circular=0x7f050018;
         public static final int progress_horizontal=0x7f050019;
         public static final int radio=0x7f05002f;
-        public static final int scoresLinearLay=0x7f050043;
+        public static final int scoresLinearLay=0x7f050044;
         public static final int search_badge=0x7f050032;
         public static final int search_bar=0x7f050031;
         public static final int search_button=0x7f050033;
@@ -1149,10 +1152,10 @@ containing a value of this type.
         public static final int split_action_bar=0x7f05001e;
         public static final int submit_area=0x7f050039;
         public static final int tabMode=0x7f050002;
-        public static final int textViewHelp=0x7f050047;
-        public static final int textViewLearn=0x7f050041;
-        public static final int textViewPlay=0x7f05003e;
-        public static final int textViewScores=0x7f050044;
+        public static final int textViewHelp=0x7f050048;
+        public static final int textViewLearn=0x7f050042;
+        public static final int textViewPlay=0x7f05003f;
+        public static final int textViewScores=0x7f050045;
         public static final int title=0x7f05002b;
         public static final int top_action_bar=0x7f050020;
         public static final int up=0x7f050021;
@@ -1209,12 +1212,15 @@ containing a value of this type.
         public static final int abc_search_dropdown_item_icons_2line=0x7f030015;
         public static final int abc_search_view=0x7f030016;
         public static final int abc_simple_decor=0x7f030017;
-        public static final int activity_main=0x7f030018;
-        public static final int fragment_main=0x7f030019;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001a;
+        public static final int activity_easy=0x7f030018;
+        public static final int activity_main=0x7f030019;
+        public static final int fragment_easy=0x7f03001a;
+        public static final int fragment_main=0x7f03001b;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001c;
     }
     public static final class menu {
-        public static final int main=0x7f0c0000;
+        public static final int easy=0x7f0c0000;
+        public static final int main=0x7f0c0001;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1260,11 +1266,14 @@ containing a value of this type.
         public static final int action_settings=0x7f0a000f;
         public static final int app_name=0x7f0a000d;
         public static final int desc=0x7f0a0011;
+        public static final int hello_world=0x7f0a0016;
         public static final int help=0x7f0a0014;
         public static final int learn=0x7f0a0012;
         public static final int pintu_header=0x7f0a000e;
         public static final int play=0x7f0a0010;
         public static final int scores=0x7f0a0013;
+        public static final int testing=0x7f0a0017;
+        public static final int title_activity_easy=0x7f0a0015;
     }
     public static final class style {
         /** 
