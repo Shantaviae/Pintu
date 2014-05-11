@@ -18,4 +18,7 @@
 	<string name="submit">Submit</string>
 	<string name="paint">Paint</string>
 	<string name="radicals">Radicals</string>
+	<string name="timerTitle">Time: </string>
+	<string name="scoreTitle">Score: </string>
+	<string name="resultsTitle">Results</string>
 </resources>

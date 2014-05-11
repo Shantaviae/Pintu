@@ -6,6 +6,5 @@
     <!-- Brush sizes -->
 	<dimen name="small_brush">10dp</dimen>
 	<integer name="small_size">10</integer>
-	<dimen name="radical_bottom_margin">2dp</dimen>
 
 </resources>
