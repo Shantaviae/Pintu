@@ -18,4 +18,12 @@
 	<string name="submit">Submit</string>
 	<string name="paint">Paint</string>
 	<string name="radicals">Radicals</string>
+<<<<<<< HEAD
+	<string name="icon_save">&#xf0c7;</string>
+	<string name="icon_erase">&#xf12d;</string>
+=======
+	<string name="timerTitle">Time: </string>
+	<string name="scoreTitle">Score: </string>
+	<string name="resultsTitle">Results</string>
+>>>>>>> FETCH_HEAD
 </resources>
