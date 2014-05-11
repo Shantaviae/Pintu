@@ -1,16 +1,136 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFCCCCCC"
+    android:orientation="horizontal"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.tangibledesign.pintu.EasyActivity$PlaceholderFragment" >
+ 
+<LinearLayout
+    android:id="@+id/radical_layout"
+    android:layout_width="40dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical" >
+    
+    <ImageView
+    android:id="@+id/radical1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:contentDescription="@string/radicals"
+    android:paddingBottom="@dimen/radical_bottom_margin"
+    android:src="@drawable/new_pic" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/testing" />
+ <ImageView
+    android:id="@+id/radical2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:contentDescription="@string/radicals"
+    android:paddingBottom="@dimen/radical_bottom_margin"
+    android:src="@drawable/new_pic" />
+ 
+    <ImageView
+    android:id="@+id/radical3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:contentDescription="@string/radicals"
+    android:paddingBottom="@dimen/radical_bottom_margin"
+    android:src="@drawable/brush" />
+    
+ <ImageView
+    android:id="@+id/radical4"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:contentDescription="@string/radicals"
+    android:paddingBottom="@dimen/radical_bottom_margin"
+    android:src="@drawable/new_pic" />
+    
+    <ImageView
+    android:id="@+id/radical5"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:contentDescription="@string/radicals"
+    android:paddingBottom="@dimen/radical_bottom_margin"
+    android:src="@drawable/eraser" />
 
-</RelativeLayout>
+ <ImageView
+    android:id="@+id/radical6"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:contentDescription="@string/radicals"
+    android:paddingBottom="@dimen/radical_bottom_margin"
+    android:src="@drawable/new_pic" />
+    
+    <ImageView
+    android:id="@+id/radical7"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:contentDescription="@string/radicals"
+    android:paddingBottom="@dimen/radical_bottom_margin"
+    android:src="@drawable/save" />
+    
+ <ImageView
+    android:id="@+id/radical8"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:contentDescription="@string/radicals"
+    android:paddingBottom="@dimen/radical_bottom_margin"
+    android:src="@drawable/new_pic" />
+    
+</LinearLayout>
+
+<com.tangibledesign.pintu.DrawingView
+    android:id="@+id/drawing"
+    android:layout_width="0dp"
+    android:layout_height="fill_parent"
+    android:layout_marginBottom="3dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="3dp"
+    android:layout_weight="1"
+    android:background="#FFFFFFFF" />
+
+<LinearLayout
+    android:id="@+id/btn_layout"
+    android:layout_width="50dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical" >
+    
+    <ImageButton
+    android:id="@+id/new_btn"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:contentDescription="@string/start_new"
+    android:src="@drawable/new_pic" />
+
+    <ImageButton
+    android:id="@+id/draw_btn"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:contentDescription="@string/brush"
+    android:src="@drawable/brush" />
+    
+    <ImageButton
+    android:id="@+id/erase_btn"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:contentDescription="@string/erase"
+    android:src="@drawable/eraser" />
+    
+    <ImageButton
+    android:id="@+id/submit_btn"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:contentDescription="@string/submit"
+    android:src="@drawable/save" />
+    
+</LinearLayout>
+
+
+
+</LinearLayout>

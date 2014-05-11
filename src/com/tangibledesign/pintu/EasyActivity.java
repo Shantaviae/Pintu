@@ -1,7 +1,6 @@
 package com.tangibledesign.pintu;
 
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,7 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.os.Build;
+import android.content.res.Configuration;
 
 public class EasyActivity extends ActionBarActivity {
 
@@ -60,5 +59,12 @@ public class EasyActivity extends ActionBarActivity {
 			return rootView;
 		}
 	}
+	
+    /** Force activity to always use landscape mode */
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+      // ignore orientation/keyboard change
+      super.onConfigurationChanged(newConfig);
+    }
 
 }
