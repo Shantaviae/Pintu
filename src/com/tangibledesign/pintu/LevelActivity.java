@@ -72,6 +72,7 @@ public class LevelActivity extends ActionBarActivity {
       super.onConfigurationChanged(newConfig);
     }
     
+    
     /** Called when the user clicks the play button on the home page */
     public void startGame(View view) {
         //Start game by taking the user to choose which level they want to begin at
