@@ -14,24 +14,29 @@
         android:label="@string/app_name"
         android:theme="@style/Theme.AppCompat.Light" >
         <activity
-            android:screenOrientation="landscape" 
-            android:configChanges="orientation|keyboardHidden"
             android:name="com.tangibledesign.pintu.MainActivity"
-            android:label="@string/app_name" >
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:screenOrientation="landscape" 
-            android:configChanges="orientation|keyboardHidden"
             android:name="com.tangibledesign.pintu.EasyActivity"
+            android:configChanges="orientation|keyboardHidden"
             android:label="@string/title_activity_easy"
-            android:parentActivityName="com.tangibledesign.pintu.EasyActivity" >
+            android:parentActivityName="com.tangibledesign.pintu.EasyActivity"
+            android:screenOrientation="landscape" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.tangibledesign.pintu.EasyActivity" />
+        </activity>
+        <activity
+            android:name="com.tangibledesign.pintu.LevelActivity"
+            android:label="@string/title_activity_level" >
         </activity>
     </application>
 

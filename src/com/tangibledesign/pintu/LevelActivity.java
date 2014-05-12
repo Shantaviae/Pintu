@@ -1,43 +1,38 @@
 package com.tangibledesign.pintu;
 
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
+import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.content.res.Configuration;
-import android.graphics.Typeface;
 
-public class EasyActivity extends ActionBarActivity {
+public class LevelActivity extends ActionBarActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_easy);
+		setContentView(R.layout.activity_level);
 		
-		Typeface font = Typeface.createFromAsset( getAssets(), "FontAwesome.otf" );
-		Button btn_clear = (Button)findViewById( R.id.new_btn );
-		Button btn_save = (Button)findViewById( R.id.submit_btn );
-		btn_clear.setTypeface(font);
-		btn_save.setTypeface(font);
-		
+		ActionBar actionBar = getSupportActionBar();
+	    actionBar.setDisplayHomeAsUpEnabled(true);
+	    
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
-		
-		
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.easy, menu);
+		getMenuInflater().inflate(R.menu.level, menu);
 		return true;
 	}
 
@@ -64,17 +59,24 @@ public class EasyActivity extends ActionBarActivity {
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.fragment_easy, container,
-					false);
+			View rootView = inflater.inflate(R.layout.fragment_level,
+					container, false);
 			return rootView;
 		}
 	}
 	
-    /** Force activity to always use landscape mode */
+	/** Force activity to always use landscape mode */
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
       // ignore orientation/keyboard change
       super.onConfigurationChanged(newConfig);
+    }
+    
+    /** Called when the user clicks the play button on the home page */
+    public void startGame(View view) {
+        //Start game by taking the user to choose which level they want to begin at
+    	Intent intent = new Intent(this, EasyActivity.class);
+    	startActivity(intent);
     }
 
 }
