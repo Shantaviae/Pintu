@@ -11,6 +11,7 @@ import android.os.CountDownTimer;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.provider.MediaStore;
@@ -20,6 +21,7 @@ import java.util.concurrent.TimeUnit;
 import android.annotation.SuppressLint;  
 import android.annotation.TargetApi;  
 import android.os.Build; 
+import android.graphics.Typeface;
 
 public class EasyActivity extends ActionBarActivity {
 
@@ -33,6 +35,14 @@ public class EasyActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_easy);
+		
+		
+		
+		Typeface font = Typeface.createFromAsset( getAssets(), "FontAwesome.otf" );
+		Button btn_clear = (Button)findViewById( R.id.new_btn );
+		Button btn_save = (Button)findViewById( R.id.submit_btn );
+		btn_clear.setTypeface(font);
+		btn_save.setTypeface(font);
 		
 		drawView = (DrawingView) findViewById(R.id.drawing);
 		textViewTime = (TextView)findViewById(R.id.timer);  

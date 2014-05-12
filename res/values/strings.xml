@@ -1,26 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="app_name">Pintu</string>
-    <string name="pintu_header">pintu</string>
-    <string name="action_settings">Settings</string>
-    <string name="play">Play</string>
-    <string name="desc"></string>
-    <string name="learn">Learn</string>
-    <string name="scores">Scores</string>
-    <string name="help">Help</string>
-    <string name="title_activity_easy">Easy Pintu Game</string>
-    <string name="title_drawing_view">Drawing View</string>
-    <string name="title_timer_activity">Timer</string>
-    <string name="hello_world">Hello world!</string>
-	<string name="testing">Testing .... testing ... 1, 2, 3!</string>
-	<string name="start_new">New</string>
-	<string name="brush">Brush</string>
-	<string name="erase">Erase</string>
-	<string name="submit">Submit</string>
-	<string name="paint">Paint</string>
-	<string name="radicals">Radicals</string>
-	<string name="timerTitle">Time: </string>
-	<string name="scoreTitle">Score:  </string>
-	<string name="resultsTitle">Results</string>
+    
+    
 </resources>

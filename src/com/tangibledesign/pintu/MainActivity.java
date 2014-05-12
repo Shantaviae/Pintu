@@ -65,7 +65,7 @@ public class MainActivity extends ActionBarActivity {
     /** Called when the user clicks the play button on the home page */
     public void startGame(View view) {
         //Start game (LEVEL easy) activity 
-    	Intent intent = new Intent(this, EasyActivity.class);
+    	Intent intent = new Intent(this, LevelActivity.class);
     	startActivity(intent);
     }
     
