@@ -7,6 +7,8 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="19" />
+    
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -32,6 +34,16 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.tangibledesign.pintu.EasyActivity" />
+        </activity>
+        <activity
+            android:screenOrientation="landscape" 
+            android:configChanges="orientation|keyboardHidden"
+            android:name="com.tangibledesign.pintu.TimerActivity"
+            android:label="@string/title_timer_activity"
+            android:parentActivityName="com.tangibledesign.pintu.TimerActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.tangibledesign.pintu.TimerActivity" />
         </activity>
     </application>
 
