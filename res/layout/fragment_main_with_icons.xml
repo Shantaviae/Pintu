@@ -1,0 +1,156 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_centerHorizontal="true"
+    android:layout_gravity="center"
+    android:background="#33B250"
+    android:orientation="vertical"
+   	android:layout_marginLeft="15dp"
+	android:layout_marginRight="15dp"
+    tools:context="com.tangibledesign.pintu.MainActivity$PlaceholderFragment" >
+    
+    <ImageView
+        android:id="@+id/imageViewLogo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+		android:layout_gravity="center"
+        android:contentDescription="@string/desc"
+        android:src="@drawable/pintulogo2" />
+         
+         
+    <RelativeLayout
+        android:id="@+id/playLinearLay"
+	    android:layout_height="wrap_content"
+	    android:layout_width="250dp"
+	    android:layout_marginTop = "30dp"
+		android:layout_below="@id/imageViewLogo"
+        android:layout_alignParentLeft="true"
+ 
+	    android:orientation="horizontal">
+	    
+     <Button
+        android:id="@+id/textViewPlay"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        
+    	android:gravity="center"
+        android:textSize="30sp"
+        android:textColor="#FFFFFF"
+        android:background="#0775B2"
+        android:fontFamily="sans-serif"
+        android:text="@string/play"
+        android:onClick="startGame" />
+
+     <ImageView
+         android:id="@+id/imageViewPlay"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:layout_alignParentLeft="true"
+         android:layout_centerVertical="true"
+         android:layout_marginLeft="40dp"
+         android:contentDescription="@string/desc"
+         android:src="@drawable/play" />
+     
+	</RelativeLayout>
+	
+    
+     <RelativeLayout
+        android:id="@+id/learnLinearLay"
+	    android:layout_height="wrap_content"
+	    android:layout_width="250dp"
+	    android:layout_marginTop = "30dp"
+	    android:layout_below="@id/imageViewLogo"
+        android:layout_alignParentRight="true"
+	    android:orientation="horizontal">
+     
+     <Button
+        android:id="@+id/textViewLearn"
+       	android:layout_width="fill_parent"
+        android:layout_height="40dp"
+    	android:gravity="center"
+        android:textSize="30sp"
+        android:textColor="#FFFFFF"
+        android:background="#0775B2"
+        android:fontFamily="sans-serif"
+        android:text="@string/learn" />
+
+     <ImageView
+         android:id="@+id/imageViewLearn"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentLeft="true"
+         android:layout_centerVertical="true"
+         android:layout_marginLeft="40dp"
+         android:contentDescription="@string/desc"
+         android:src="@drawable/learn" />
+     
+	</RelativeLayout>
+	
+
+    <RelativeLayout
+	    android:id="@+id/scoresLinearLay"
+	    android:layout_height="wrap_content"
+	    android:layout_width="250dp"
+	    android:layout_marginTop = "30dp"
+		android:layout_below="@id/playLinearLay"
+        android:layout_alignParentLeft="true"    
+	    android:orientation="horizontal">
+	<Button
+        android:id="@+id/textViewScores"
+       	android:layout_width="fill_parent"
+        android:layout_height="40dp"
+    	android:gravity="center"
+        android:textSize="30sp"
+        android:textColor="#FFFFFF"
+        android:background="#0775B2"
+        android:fontFamily="sans-serif"
+        android:text="@string/scores" />
+	
+     <ImageView
+         android:id="@+id/imageViewScores"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentLeft="true"
+         android:layout_centerVertical="true"
+         android:layout_marginLeft="40dp"
+         android:contentDescription="@string/desc"
+         android:src="@drawable/scores" />
+     
+	</RelativeLayout>
+	
+
+     <RelativeLayout
+        android:id="@+id/helpLinearLay"
+	    android:layout_height="wrap_content"
+	    android:layout_width="250dp"
+	    android:layout_marginTop = "30dp"
+	    android:layout_below="@id/learnLinearLay"
+        android:layout_alignParentRight="true"
+	    android:orientation="horizontal">
+     
+	<Button
+        android:id="@+id/textViewHelp"
+       	android:layout_width="fill_parent"
+        android:layout_height="40dp"
+    	android:gravity="center"
+        android:textSize="30sp"
+        android:textColor="#FFFFFF"
+        android:background="#0775B2"
+        android:fontFamily="sans-serif"
+        android:text="@string/help" />
+	
+     <ImageView
+         android:id="@+id/imageViewHelp"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentLeft="true"
+         android:layout_centerVertical="true"
+         android:layout_marginLeft="40dp"
+         android:contentDescription="@string/desc"
+         android:src="@drawable/help" />
+     
+	</RelativeLayout>
+	
+
+</RelativeLayout>
