@@ -72,11 +72,31 @@ public class LevelActivity extends ActionBarActivity {
       super.onConfigurationChanged(newConfig);
     }
     
+    /** Called when the user clicks the play button on the home page */
+    public void startLearnGame(View view) {
+        //Start game by taking the user to choose which level they want to begin at
+    	Intent intent = new Intent(this, LearnActivity.class);
+    	startActivity(intent);
+    }
     
     /** Called when the user clicks the play button on the home page */
-    public void startGame(View view) {
+    public void startEasyGame(View view) {
         //Start game by taking the user to choose which level they want to begin at
     	Intent intent = new Intent(this, EasyActivity.class);
+    	startActivity(intent);
+    }
+    
+    /** Called when the user clicks the play button on the home page */
+    public void startMediumGame(View view) {
+        //Start game by taking the user to choose which level they want to begin at
+    	Intent intent = new Intent(this, MediumActivity.class);
+    	startActivity(intent);
+    }
+    
+    /** Called when the user clicks the play button on the home page */
+    public void startHardGame(View view) {
+        //Start game by taking the user to choose which level they want to begin at
+    	Intent intent = new Intent(this, HardActivity.class);
     	startActivity(intent);
     }
 

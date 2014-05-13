@@ -69,6 +69,13 @@ public class MainActivity extends ActionBarActivity {
     	startActivity(intent);
     }
     
+    /** Called when the user clicks the play button on the home page */
+    public void showScores(View view) {
+        //Start game (LEVEL easy) activity 
+    	Intent intent = new Intent(this, ScoreActivity.class);
+    	startActivity(intent);
+    }
+    
     /** Force activity to always use landscape mode */
     @Override
     public void onConfigurationChanged(Configuration newConfig) {

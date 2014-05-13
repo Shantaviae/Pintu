@@ -9,12 +9,12 @@
     <string name="learn">Learn</string>
     <string name="scores">Scores</string>
     <string name="help">Help</string>
-    <string name="title_activity_easy">Easy Game Activity</string>
+    <string name="title_activity_easy">Easy Game</string>
     <string name="hello_world">Hello world!</string>
-    <string name="first">Level 1</string>
-    <string name="second">Level 2</string>
-    <string name="third">Level 3</string>
-    <string name="fourth">Level 4</string>
+    <string name="first">Learn</string>
+    <string name="second">Level Beginner</string>
+    <string name="third">Level Intermediate</string>
+    <string name="fourth">Level Advanced</string>
     <string name="testing">Testing .... testing ... 1, 2, 3!</string>
     <string name="start_new">New</string>
     <string name="brush">Brush</string>
@@ -29,6 +29,10 @@
     <string name="icon_erase">&#xf12d;</string>
     <string name="icon_wand">B</string>
     <string name="icon_clear">B</string>
-    <string name="title_activity_level">LevelActivity</string>
+    <string name="title_activity_level">Choose a level</string>
+    <string name="title_activity_score">Scores</string>
+    <string name="title_activity_learn">Learn Radicals</string>
+    <string name="title_activity_medium">Medium Game</string>
+    <string name="title_activity_hard">Hard Game</string>
 
 </resources>

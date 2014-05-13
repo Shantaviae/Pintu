@@ -23,7 +23,7 @@ import android.annotation.TargetApi;
 import android.os.Build; 
 import android.graphics.Typeface;
 
-public class EasyActivity extends ActionBarActivity {
+public class LearnActivity extends ActionBarActivity {
 
 	//custom drawing view
 	public DrawingView drawView;
@@ -34,7 +34,7 @@ public class EasyActivity extends ActionBarActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_easy);
+		setContentView(R.layout.activity_learn);
 		
 		Typeface font = Typeface.createFromAsset( getAssets(), "FontAwesome.otf" );
 		Button btn_clear = (Button)findViewById( R.id.new_btn );
@@ -127,7 +127,7 @@ public class EasyActivity extends ActionBarActivity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.easy, menu);
+		getMenuInflater().inflate(R.menu.learn, menu);
 		return true;
 	}
 

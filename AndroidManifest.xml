@@ -7,7 +7,7 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="19" />
-    
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
@@ -30,17 +30,52 @@
             android:name="com.tangibledesign.pintu.EasyActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/title_activity_easy"
-            android:parentActivityName="com.tangibledesign.pintu.EasyActivity"
+            android:parentActivityName="com.tangibledesign.pintu.LevelActivity"
             android:screenOrientation="landscape" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.tangibledesign.pintu.EasyActivity" />
+                android:value="com.tangibledesign.pintu.LevelActivity" />
         </activity>
-        
         <activity
             android:name="com.tangibledesign.pintu.LevelActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/title_activity_level"
+            android:parentActivityName="com.tangibledesign.pintu.MainActivity"
+            android:screenOrientation="landscape" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.tangibledesign.pintu.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.tangibledesign.pintu.ScoreActivity"
+            android:label="@string/title_activity_score"
+            android:parentActivityName="com.tangibledesign.pintu.MainActivity"
+            android:screenOrientation="landscape" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.tangibledesign.pintu.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.tangibledesign.pintu.LearnActivity"
+            android:label="@string/title_activity_learn" 
+            android:parentActivityName="com.tangibledesign.pintu.LevelActivity"
+            android:screenOrientation="landscape" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.tangibledesign.pintu.LevelActivity" />
+        </activity>
+        <activity
+            android:name="com.tangibledesign.pintu.MediumActivity"
+            android:label="@string/title_activity_medium" 
+            android:parentActivityName="com.tangibledesign.pintu.LevelActivity"
+            android:screenOrientation="landscape" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.tangibledesign.pintu.LevelActivity" />
+        </activity>
+        <activity
+            android:name="com.tangibledesign.pintu.HardActivity"
+            android:label="@string/title_activity_hard" 
             android:parentActivityName="com.tangibledesign.pintu.LevelActivity"
             android:screenOrientation="landscape" >
             <meta-data
