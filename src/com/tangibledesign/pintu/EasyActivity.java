@@ -37,7 +37,8 @@ public class EasyActivity extends ActionBarActivity {
 		setContentView(R.layout.activity_easy);
 		
 		
-		Typeface font = Typeface.createFromAsset( getAssets(), "icomoon.ttf" );
+		
+		Typeface font = Typeface.createFromAsset( getAssets(), "FontAwesome.otf" );
 		Button btn_clear = (Button)findViewById( R.id.new_btn );
 		Button btn_save = (Button)findViewById( R.id.submit_btn );
 		btn_clear.setTypeface(font);
@@ -75,7 +76,6 @@ public class EasyActivity extends ActionBarActivity {
 		String scoreText = String.format(Locale.US," %d", score); 
 		textViewScore.setText(scoreText); 
 	}
-	
 	public void submitEntry(View view){
 		
 		AlertDialog.Builder saveDialog = new AlertDialog.Builder(this);
@@ -171,4 +171,7 @@ public class EasyActivity extends ActionBarActivity {
 			textViewTime.setText(ms); 
 		} 
 	} 
+	
+	
+
 }

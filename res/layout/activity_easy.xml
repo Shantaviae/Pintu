@@ -146,7 +146,7 @@
 	    android:layout_height="wrap_content"
 	    style="?android:attr/buttonStyleSmall"
 	    android:color="#000000"
-	    android:text="@string/icon_clear"
+	    android:text="@string/icon_erase"
 	    android:onClick="clearScreen" />
 
 	    <Button
@@ -155,7 +155,7 @@
 	    android:layout_height="wrap_content"
 	    style="?android:attr/buttonStyleSmall"
 	    android:color="#000000"
-	    android:text="@string/icon_submit"
+	    android:text="@string/icon_save"
 	    android:onClick="submitEntry" />
     </LinearLayout>
     

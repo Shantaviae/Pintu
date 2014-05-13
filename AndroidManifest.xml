@@ -7,7 +7,7 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="19" />
-
+    
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
@@ -36,6 +36,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.tangibledesign.pintu.EasyActivity" />
         </activity>
+        
         <activity
             android:name="com.tangibledesign.pintu.LevelActivity"
             android:configChanges="orientation|keyboardHidden"
@@ -45,14 +46,6 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.tangibledesign.pintu.LevelActivity" />
-        </activity>
-        <activity
-            android:name="com.tangibledesign.pintu.MedActivity"
-            android:label="@string/title_activity_med" >
-        </activity>
-        <activity
-            android:name="com.tangibledesign.pintu.HardActivity"
-            android:label="@string/title_activity_hard" >
         </activity>
     </application>
 
