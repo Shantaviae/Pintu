@@ -1103,18 +1103,22 @@ containing a value of this type.
         public static final int person=0x7f02006b;
         public static final int pintulogo=0x7f02006c;
         public static final int pintulogo2=0x7f02006d;
-        public static final int play=0x7f02006e;
-        public static final int red=0x7f02006f;
-        public static final int rest=0x7f020070;
-        public static final int save=0x7f020071;
-        public static final int scores=0x7f020072;
-        public static final int sun=0x7f020073;
-        public static final int tree=0x7f020074;
-        public static final int tree_trace=0x7f020075;
-        public static final int water=0x7f020076;
-        public static final int white=0x7f020077;
-        public static final int woman=0x7f020078;
-        public static final int yellow=0x7f020079;
+        public static final int pintulogo3=0x7f02006e;
+        public static final int pintulogo4=0x7f02006f;
+        public static final int pintulogobackground=0x7f020070;
+        public static final int pintulogobackground2=0x7f020071;
+        public static final int play=0x7f020072;
+        public static final int red=0x7f020073;
+        public static final int rest=0x7f020074;
+        public static final int save=0x7f020075;
+        public static final int scores=0x7f020076;
+        public static final int sun=0x7f020077;
+        public static final int tree=0x7f020078;
+        public static final int tree_trace=0x7f020079;
+        public static final int water=0x7f02007a;
+        public static final int white=0x7f02007b;
+        public static final int woman=0x7f02007c;
+        public static final int yellow=0x7f02007d;
     }
     public static final class id {
         public static final int action_bar=0x7f05001c;
