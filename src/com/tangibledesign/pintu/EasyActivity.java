@@ -30,6 +30,7 @@ public class EasyActivity extends ActionBarActivity {
 	TextView textViewTime;
 	TextView textViewScore;
 	public int score = 0;
+	CounterClass timer;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -47,10 +48,16 @@ public class EasyActivity extends ActionBarActivity {
 		textViewScore = (TextView)findViewById(R.id.score); 
         textViewTime.setText(" 2:01"); 
         textViewScore.setText(" 0");
-        final CounterClass timer = new CounterClass(121000,1000); 
+        timer = new CounterClass(121000,1000); 
         timer.start();
 	}
 
+	@Override
+	protected void onPause() {
+		super.onPause();
+		timer.cancel();
+	}
+	
 	public void clearScreen(View view){
 		AlertDialog.Builder newDialog = new AlertDialog.Builder(this);
 		newDialog.setTitle("Clear Attempt");

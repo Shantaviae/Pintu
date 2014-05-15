@@ -1,35 +1,23 @@
 package com.tangibledesign.pintu;
 
-import java.util.Locale;
 import java.util.UUID;
 
 import android.support.v7.app.ActionBarActivity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 import android.provider.MediaStore;
-
-import java.util.concurrent.TimeUnit;  
-
-import android.annotation.SuppressLint;  
-import android.annotation.TargetApi;  
-import android.os.Build; 
 import android.graphics.Typeface;
 
 public class LearnActivity extends ActionBarActivity {
 
 	//custom drawing view
 	public DrawingView drawView;
-	TextView textViewTime;
-	TextView textViewScore;
-	public int score = 0;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -37,18 +25,15 @@ public class LearnActivity extends ActionBarActivity {
 		setContentView(R.layout.activity_learn);
 		
 		Typeface font = Typeface.createFromAsset( getAssets(), "FontAwesome.otf" );
+		
 		Button btn_clear = (Button)findViewById( R.id.new_btn );
 		Button btn_save = (Button)findViewById( R.id.submit_btn );
+		Button btn_next = (Button)findViewById( R.id.next_btn );
 		btn_clear.setTypeface(font);
 		btn_save.setTypeface(font);
+		btn_next.setTypeface(font);
 		
 		drawView = (DrawingView) findViewById(R.id.drawing);
-		textViewTime = (TextView)findViewById(R.id.timer);  
-		textViewScore = (TextView)findViewById(R.id.score); 
-        textViewTime.setText(" 2:01"); 
-        textViewScore.setText(" 0");
-        final CounterClass timer = new CounterClass(121000,1000); 
-        timer.start();
 	}
 
 	public void clearScreen(View view){
@@ -69,11 +54,7 @@ public class LearnActivity extends ActionBarActivity {
 		newDialog.show();
 	}
 
-	public void addScore (){
-		score = score + 100;
-		String scoreText = String.format(Locale.US," %d", score); 
-		textViewScore.setText(scoreText); 
-	}
+
 	public void submitEntry(View view){
 		
 		AlertDialog.Builder saveDialog = new AlertDialog.Builder(this);
@@ -89,7 +70,6 @@ public class LearnActivity extends ActionBarActivity {
 				if(imgSaved!=null){
 				    Toast savedToast = Toast.makeText(getApplicationContext(), 
 				        "Correct!", Toast.LENGTH_SHORT);
-				    addScore();
 				    savedToast.show();
 				    drawView.startNew();
 				    drawView.destroyDrawingCache();
@@ -142,34 +122,4 @@ public class LearnActivity extends ActionBarActivity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-
-	@TargetApi(Build.VERSION_CODES.GINGERBREAD) 
-	@SuppressLint("NewApi") 
-	public class CounterClass extends CountDownTimer { 
-		public CounterClass(long millisInFuture, long countDownInterval) { 
-			super(millisInFuture, countDownInterval); 
-		} 
-		
-		@Override 
-		public void onFinish() { 
-			textViewTime.setText(" 00:00"); 
-			Toast timeUpToast = Toast.makeText(getApplicationContext(), 
-			        "Time's Up!", Toast.LENGTH_LONG);
-			    timeUpToast.show();
-		} 
-		
-		@SuppressLint("NewApi") 
-		@TargetApi(Build.VERSION_CODES.GINGERBREAD) 
-		@Override public void onTick(long millisUntilFinished) { 
-			long millis = millisUntilFinished; 
-			String ms = String.format(Locale.US, " %01d:%02d",  
-					TimeUnit.MILLISECONDS.toMinutes(millis), 
-					TimeUnit.MILLISECONDS.toSeconds(millis) 
-					- TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis))); 
-			textViewTime.setText(ms); 
-		} 
-	} 
-	
-	
-
 }

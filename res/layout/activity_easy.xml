@@ -22,59 +22,20 @@
     android:id="@+id/radical1"
     style="@style/RadicalImages"
     android:contentDescription="@string/radicals"
-    android:src="@drawable/door" />
+    android:src="@drawable/tree" />
 
  <ImageView
     android:id="@+id/radical2"
     style="@style/RadicalImages"
     android:contentDescription="@string/radicals"
-    android:src="@drawable/fire" />
+    android:src="@drawable/person" />
  
     <ImageView
     android:id="@+id/radical3"
     style="@style/RadicalImages"
     android:contentDescription="@string/radicals"
-    android:src="@drawable/mountain" />
+    android:src="@drawable/one" />
     
- <ImageView
-    android:id="@+id/radical4"
-    style="@style/RadicalImages"
-    android:contentDescription="@string/radicals"
-    android:src="@drawable/mouth" />
-
-    
-</LinearLayout>
-
-<LinearLayout
-    android:id="@+id/radical_layout2"
-    android:layout_width="40dp"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:orientation="vertical" >
-        
-    <ImageView
-    android:id="@+id/radical5"
-    style="@style/RadicalImages"
-    android:contentDescription="@string/radicals"
-    android:src="@drawable/person" />
-
- <ImageView
-    android:id="@+id/radical6"
-    style="@style/RadicalImages"
-    android:contentDescription="@string/radicals"
-    android:src="@drawable/sun" />
-    
-    <ImageView
-    android:id="@+id/radical7"
-    style="@style/RadicalImages"
-    android:contentDescription="@string/radicals"
-    android:src="@drawable/water" />
-    
- <ImageView
-    android:id="@+id/radical8"
-    style="@style/RadicalImages"
-    android:contentDescription="@string/radicals"
-    android:src="@drawable/woman" />
     
 </LinearLayout>
 

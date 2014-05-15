@@ -27,6 +27,7 @@
     <string name="resultsTitle">Results</string>
     <string name="icon_save">&#xf0c7;</string>
     <string name="icon_erase">&#xf12d;</string>
+    <string name="icon_next">&#xf04e;</string>
     <string name="icon_wand">B</string>
     <string name="icon_clear">B</string>
     <string name="title_activity_level">Choose a level</string>
@@ -34,5 +35,9 @@
     <string name="title_activity_learn">Learn Radicals</string>
     <string name="title_activity_medium">Medium Game</string>
     <string name="title_activity_hard">Hard Game</string>
+    <string name="pinyin">M&#249; - tree, wooden</string>
+    <string name="example1">T&#464; - (human) body, form </string>
+    <string name="example2">Xi&#363; - to rest </string>
+    <string name="title_activity_tracing_view">TracingView</string>
 
 </resources>
