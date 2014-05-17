@@ -78,7 +78,6 @@
     
 </LinearLayout>
 
-
 <com.tangibledesign.pintu.DrawingView
     android:id="@+id/drawing"
     android:layout_width="0dp"
@@ -100,7 +99,8 @@
     <RelativeLayout
         android:id="@+id/timerLayout"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
         
         <TextView 
 	    android:id="@+id/timerTitle"
@@ -118,7 +118,10 @@
     <RelativeLayout
         android:id="@+id/scoreLayout"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="2dp"
+        android:layout_gravity="center">
         
         <TextView 
 	    android:id="@+id/scoreTitle"
@@ -140,19 +143,37 @@
     android:layout_gravity="center"
     android:orientation="horizontal" >
     
+       	<Button
+	    android:id="@+id/draw_btn"
+	    android:layout_width="35dp"
+	    android:layout_height="35dp"
+	    style="?android:attr/buttonStyleSmall"
+	    android:color="#000000"
+	    android:text="@string/icon_draw"
+	    android:onClick="startDraw" />
+
 	    <Button
-	    android:id="@+id/new_btn"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
+	    android:id="@+id/erase_btn"
+	    android:layout_width="35dp"
+	    android:layout_height="35dp"
 	    style="?android:attr/buttonStyleSmall"
 	    android:color="#000000"
 	    android:text="@string/icon_erase"
+	    android:onClick="startEraser" />
+	    
+	    <Button
+	    android:id="@+id/new_btn"
+	    android:layout_width="35dp"
+	    android:layout_height="35dp"
+	    style="?android:attr/buttonStyleSmall"
+	    android:color="#000000"
+	    android:text="@string/icon_new"
 	    android:onClick="clearScreen" />
 
 	    <Button
 	    android:id="@+id/submit_btn"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
+	    android:layout_width="35dp"
+	    android:layout_height="35dp"
 	    style="?android:attr/buttonStyleSmall"
 	    android:color="#000000"
 	    android:text="@string/icon_save"
@@ -162,14 +183,17 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="2dp"
+        android:layout_gravity="center"
         android:text="@string/resultsTitle">
         
     </TextView>
     
     <LinearLayout
     android:id="@+id/resultsLayout"
-    android:layout_width="100dp" 
-    android:layout_height="130dp"
+    android:layout_width="150dp" 
+    android:layout_height="120dp"
     android:background="@drawable/customborder"
     android:orientation="horizontal"
     android:gravity="center">
@@ -181,4 +205,5 @@
 </LinearLayout>
 
 </LinearLayout>
+
 

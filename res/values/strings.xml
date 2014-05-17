@@ -26,8 +26,10 @@
     <string name="scoreTitle">Score: </string>
     <string name="resultsTitle">Results</string>
     <string name="icon_save">&#xf0c7;</string>
+    <string name="icon_new">&#xf016;</string>
     <string name="icon_erase">&#xf12d;</string>
-    <string name="icon_next">&#xf04e;</string>
+    <string name="icon_draw">&#xf040;</string>    
+    <string name="icon_next">&#xf101;</string>
     <string name="icon_wand">B</string>
     <string name="icon_clear">B</string>
     <string name="title_activity_level">Choose a level</string>

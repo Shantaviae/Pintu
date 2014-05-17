@@ -38,18 +38,35 @@ public class EasyActivity extends ActionBarActivity {
 		setContentView(R.layout.activity_easy);
 		
 		Typeface font = Typeface.createFromAsset( getAssets(), "FontAwesome.otf" );
+		
 		Button btn_clear = (Button)findViewById( R.id.new_btn );
 		Button btn_save = (Button)findViewById( R.id.submit_btn );
+		Button btn_draw = (Button)findViewById( R.id.draw_btn );
+		Button btn_erase = (Button)findViewById( R.id.erase_btn );
+		
 		btn_clear.setTypeface(font);
 		btn_save.setTypeface(font);
+		btn_draw.setTypeface(font);
+		btn_erase.setTypeface(font);
 		
 		drawView = (DrawingView) findViewById(R.id.drawing);
+		
 		textViewTime = (TextView)findViewById(R.id.timer);  
 		textViewScore = (TextView)findViewById(R.id.score); 
+		
         textViewTime.setText(" 2:01"); 
         textViewScore.setText(" 0");
         timer = new CounterClass(121000,1000); 
         timer.start();
+	}
+	
+	public void startDraw (View view){
+		drawView.setErase(false);
+		
+	}
+	
+	public void startEraser (View view){
+		drawView.setErase(true);
 	}
 
 	@Override
@@ -65,6 +82,7 @@ public class EasyActivity extends ActionBarActivity {
 		newDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener(){
 		    public void onClick(DialogInterface dialog, int which){
 		        drawView.startNew();
+		        drawView.setErase(false);
 		        dialog.dismiss();
 		    }
 		});
@@ -100,6 +118,7 @@ public class EasyActivity extends ActionBarActivity {
 				    savedToast.show();
 				    drawView.startNew();
 				    drawView.destroyDrawingCache();
+				    drawView.setErase(false);
 				}
 				else{
 				    Toast unsavedToast = Toast.makeText(getApplicationContext(), 

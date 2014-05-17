@@ -35,6 +35,10 @@ public class LevelActivity extends ActionBarActivity {
 		getMenuInflater().inflate(R.menu.level, menu);
 		return true;
 	}
+	
+	public void nextRadical() {
+		
+	}	
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {

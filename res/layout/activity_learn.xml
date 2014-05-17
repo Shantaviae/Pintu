@@ -48,7 +48,7 @@
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:layout_gravity="center"
-	    android:text="@string/pinyin" />"
+	    android:text="@string/pinyin" />
 		
 	    
 	    <LinearLayout
@@ -57,33 +57,42 @@
 	    android:layout_height="wrap_content"
 	    android:layout_gravity="center"
 	    android:orientation="horizontal" >
-	    
-		    <Button
-		    android:id="@+id/new_btn"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    style="?android:attr/buttonStyleSmall"
-		    android:color="#000000"
-		    android:text="@string/icon_erase"
-		    android:onClick="clearScreen" />
-	
-		    <Button
-		    android:id="@+id/submit_btn"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    style="?android:attr/buttonStyleSmall"
-		    android:color="#000000"
-		    android:text="@string/icon_save"
-		    android:onClick="submitEntry" />
+   
+		   <Button
+		   android:id="@+id/draw_btn"
+		   android:layout_width="35dp"
+		   android:layout_height="35dp"
+		   style="?android:attr/buttonStyleSmall"
+		   android:color="#000000"
+		   android:text="@string/icon_draw"
+		   android:onClick="startDraw" />
+		
+		   <Button
+		   android:id="@+id/erase_btn"
+		   android:layout_width="35dp"
+		   android:layout_height="35dp"
+		   style="?android:attr/buttonStyleSmall"
+		   android:color="#000000"
+		   android:text="@string/icon_erase"
+		   android:onClick="startEraser" />
+		   
+		   <Button
+		   android:id="@+id/new_btn"
+		   android:layout_width="35dp"
+		   android:layout_height="35dp"
+		   style="?android:attr/buttonStyleSmall"
+		   android:color="#000000"
+		   android:text="@string/icon_new"
+		   android:onClick="clearScreen" />
 		    
-		    <Button
-		    android:id="@+id/next_btn"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    style="?android:attr/buttonStyleSmall"
-		    android:color="#000000"
-		    android:text="@string/icon_next"
-		    android:onClick="submitEntry" />
+		   <Button
+		   android:id="@+id/next_btn"
+		   android:layout_width="35dp"
+		   android:layout_height="35dp"
+		   style="?android:attr/buttonStyleSmall"
+		   android:color="#000000"
+		   android:text="@string/icon_next"
+		   android:onClick="nextRadical" />
 	    </LinearLayout>
 	    
 	    <RelativeLayout 

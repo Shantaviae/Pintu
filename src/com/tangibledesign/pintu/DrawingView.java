@@ -6,8 +6,10 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+//import android.graphics.PorterDuffXfermode;
 import android.view.MotionEvent;
 import android.graphics.PorterDuff;
 
@@ -25,9 +27,27 @@ public class DrawingView extends View {
 	//canvas bitmap
 	private Bitmap canvasBitmap;
 	
+	private boolean erase=false;
+	
 	public DrawingView(Context context, AttributeSet attrs){
 	    super(context, attrs);
 	    setupDrawing();
+	}
+	
+	public void setErase(boolean isErase){
+		//set erase true or false
+		erase=isErase;
+		
+		//alter the Paint object to erase or switch back to drawing:
+		if(erase) {
+			//drawPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+			drawPaint.setColor(Color.WHITE);
+			drawPaint.setStrokeWidth(40);
+		} else { 
+			//drawPaint.setXfermode(null);
+			drawPaint.setColor(Color.BLACK);
+			drawPaint.setStrokeWidth(10);
+		}
 	}
 	
 	@SuppressLint("DefaultLocale") public String toString() {
@@ -40,7 +60,7 @@ public class DrawingView extends View {
 		drawPath = new Path();
 		drawPaint = new Paint();
 		
-		drawPaint.setColor(paintColor);
+		drawPaint.setColor(Color.BLACK);
 		drawPaint.setAntiAlias(true);
 		drawPaint.setStrokeWidth(10);
 		drawPaint.setStyle(Paint.Style.STROKE);

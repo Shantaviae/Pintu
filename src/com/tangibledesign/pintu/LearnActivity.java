@@ -27,13 +27,25 @@ public class LearnActivity extends ActionBarActivity {
 		Typeface font = Typeface.createFromAsset( getAssets(), "FontAwesome.otf" );
 		
 		Button btn_clear = (Button)findViewById( R.id.new_btn );
-		Button btn_save = (Button)findViewById( R.id.submit_btn );
+		Button btn_erase = (Button)findViewById( R.id.erase_btn );
+		Button btn_draw = (Button)findViewById( R.id.draw_btn );
 		Button btn_next = (Button)findViewById( R.id.next_btn );
+		
 		btn_clear.setTypeface(font);
-		btn_save.setTypeface(font);
+		btn_erase.setTypeface(font);
 		btn_next.setTypeface(font);
+		btn_draw.setTypeface(font);
 		
 		drawView = (DrawingView) findViewById(R.id.drawing);
+	}
+	
+	public void startDraw (View view){
+		drawView.setErase(false);
+		
+	}
+	
+	public void startEraser (View view){
+		drawView.setErase(true);
 	}
 
 	public void clearScreen(View view){
@@ -43,6 +55,7 @@ public class LearnActivity extends ActionBarActivity {
 		newDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener(){
 		    public void onClick(DialogInterface dialog, int which){
 		        drawView.startNew();
+		        drawView.setErase(false);
 		        dialog.dismiss();
 		    }
 		});
@@ -73,6 +86,7 @@ public class LearnActivity extends ActionBarActivity {
 				    savedToast.show();
 				    drawView.startNew();
 				    drawView.destroyDrawingCache();
+				    drawView.setErase(false);
 				}
 				else{
 				    Toast unsavedToast = Toast.makeText(getApplicationContext(), 
