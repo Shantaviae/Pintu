@@ -3,4 +3,7 @@
     <issue id="DefaultLocale">
         <ignore path="src/com/tangibledesign/pintu/EasyActivity.java" />
     </issue>
+    <issue id="NewApi">
+        <ignore path="src/com/abbyy/ocrsdk/Client.java" />
+    </issue>
 </lint>
