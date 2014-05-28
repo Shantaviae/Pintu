@@ -40,9 +40,9 @@ public class EasyActivity extends ActionBarActivity {
 	CounterClass timer;
 	EasyActivity eAct;
 	
-	public static final String DCIM = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString();
+	/**public static final String DCIM = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString();
     public static final String DIRECTORY = DCIM + "/Camera";
-	private String imgUrl = DIRECTORY + "/TestRad.jpg";
+	private String imgUrl = DIRECTORY + "/TestRad.jpg";**/
 	private String resultUrl = "result.txt";
 	
 	@Override
@@ -128,14 +128,14 @@ public class EasyActivity extends ActionBarActivity {
 					    getContentResolver(), drawView.getDrawingCache(),
 					    UUID.randomUUID().toString()+".png", "drawing");
 				
-				deleteFile(resultUrl);
-				new AsyncProcessTask(eAct).execute(imgUrl, resultUrl);
+				//deleteFile(resultUrl);
+				//new AsyncProcessTask(eAct).execute(imgUrl, resultUrl);
 				
 				if(imgSaved!=null){
-				    //Toast savedToast = Toast.makeText(getApplicationContext(), "Correct!", Toast.LENGTH_SHORT);
+				    Toast savedToast = Toast.makeText(getApplicationContext(), "Correct!", Toast.LENGTH_SHORT);
 				    
 				    addScore();
-				    //savedToast.show();
+				    savedToast.show();
 				    drawView.startNew();
 				    drawView.destroyDrawingCache();
 				    drawView.setErase(false);
