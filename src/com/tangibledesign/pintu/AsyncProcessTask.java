@@ -1,5 +1,6 @@
 package com.tangibledesign.pintu;
 
+import java.io.File;
 import java.io.FileOutputStream;
 
 import com.abbyy.ocrsdk.*;
@@ -8,6 +9,7 @@ import android.app.*;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.util.Log;
 
 public class AsyncProcessTask extends AsyncTask<String, String, Boolean> {
 
@@ -31,8 +33,7 @@ public class AsyncProcessTask extends AsyncTask<String, String, Boolean> {
 		if (dialog.isShowing()) {
 			dialog.dismiss();
 		}
-		
-		//activity.updateResults();
+		activity.updateResults();
 	}
 
 	@Override
@@ -40,10 +41,12 @@ public class AsyncProcessTask extends AsyncTask<String, String, Boolean> {
 
 		String inputFile = args[0];
 		String outputFile = args[1];
+		//Log.d("Error", "Input: " + inputFile);
+		Log.d("Error", "Output: " + inputFile);
+		
 
 		try {
 			Client restClient = new Client();
-			
 						
 			// Name of application you created
 			restClient.applicationId = "PintuLearning";
@@ -79,7 +82,7 @@ public class AsyncProcessTask extends AsyncTask<String, String, Boolean> {
 			processingSettings.setOutputFormat( ProcessingSettings.OutputFormat.txt );
 			processingSettings.setLanguage(language);
 			
-			publishProgress("Uploading..");
+			publishProgress("Submitting for processing..");
 
 			// If you want to process business cards, uncomment this
 			/*
@@ -98,9 +101,12 @@ public class AsyncProcessTask extends AsyncTask<String, String, Boolean> {
 			}
 			
 			if( task.Status == Task.TaskStatus.Completed ) {
-				publishProgress( "Downloading.." );
+				publishProgress( "Saving results.." );
+				File outFile = new File(outputFile);
+				long outSize = outFile.getFreeSpace();
+				Log.d(outputFile, "Size is " + outSize);
 				FileOutputStream fos = activity.openFileOutput(outputFile,Context.MODE_PRIVATE);
-				
+				Log.d("Error", "Write path: " + outputFile);
 				restClient.downloadResult(task, fos);
 				
 				fos.close();
@@ -115,6 +121,7 @@ public class AsyncProcessTask extends AsyncTask<String, String, Boolean> {
 			return true;
 		} catch (Exception e) {
 			publishProgress( "Error: " + e.getMessage());
+			Log.d("Error", "Error: " + e.getMessage());
 			return false;
 		}
 	}

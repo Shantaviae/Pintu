@@ -1,5 +1,9 @@
 package com.tangibledesign.pintu;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.util.Locale;
 import java.util.UUID;
 
@@ -8,6 +12,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Environment;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,19 +28,29 @@ import android.annotation.TargetApi;
 import android.os.Build; 
 import android.graphics.Typeface;
 
+@SuppressLint("NewApi")
 public class EasyActivity extends ActionBarActivity {
 
 	//custom drawing view
 	public DrawingView drawView;
 	TextView textViewTime;
 	TextView textViewScore;
+	TextView tv;
 	public int score = 0;
 	CounterClass timer;
+	EasyActivity eAct;
+	
+	public static final String DCIM = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString();
+    public static final String DIRECTORY = DCIM + "/Camera";
+	private String imgUrl = DIRECTORY + "/TestRad.jpg";
+	private String resultUrl = "result.txt";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_easy);
+		
+		eAct = this;
 		
 		Typeface font = Typeface.createFromAsset( getAssets(), "FontAwesome.otf" );
 		
@@ -53,6 +68,7 @@ public class EasyActivity extends ActionBarActivity {
 		
 		textViewTime = (TextView)findViewById(R.id.timer);  
 		textViewScore = (TextView)findViewById(R.id.score); 
+		tv = (TextView)findViewById(R.id.results);
 		
         textViewTime.setText(" 2:01"); 
         textViewScore.setText(" 0");
@@ -111,11 +127,15 @@ public class EasyActivity extends ActionBarActivity {
 				String imgSaved = MediaStore.Images.Media.insertImage(
 					    getContentResolver(), drawView.getDrawingCache(),
 					    UUID.randomUUID().toString()+".png", "drawing");
+				
+				deleteFile(resultUrl);
+				new AsyncProcessTask(eAct).execute(imgUrl, resultUrl);
+				
 				if(imgSaved!=null){
-				    Toast savedToast = Toast.makeText(getApplicationContext(), 
-				        "Correct!", Toast.LENGTH_SHORT);
+				    //Toast savedToast = Toast.makeText(getApplicationContext(), "Correct!", Toast.LENGTH_SHORT);
+				    
 				    addScore();
-				    savedToast.show();
+				    //savedToast.show();
 				    drawView.startNew();
 				    drawView.destroyDrawingCache();
 				    drawView.setErase(false);
@@ -197,5 +217,41 @@ public class EasyActivity extends ActionBarActivity {
 	} 
 	
 	
+	public void updateResults() {
+		try {
+			StringBuffer contents = new StringBuffer();
 
+			FileInputStream fis = openFileInput(resultUrl);
+			Reader reader = new InputStreamReader(fis, "UTF-8");
+			BufferedReader bufReader = new BufferedReader(reader);
+			String text = null;
+			while ((text = bufReader.readLine()) != null) {
+				contents.append(text).append(System.getProperty("line.separator"));
+			}
+
+			//displayMessage(contents.toString());
+		} catch (Exception e) {
+			//displayMessage("Error: " + e.getMessage());
+		}
+	}
+	
+	/*private void displayMessage( String text )
+	{
+		tv.post( new MessagePoster( text ) );
+	}
+	
+	class MessagePoster implements Runnable {
+		public MessagePoster( String message )
+		{
+			_message = message;
+		}
+
+		public void run() {
+			tv.append( _message + "\n" );
+			setContentView( tv );
+		}
+
+		private final String _message;
+	}
+	*/
 }

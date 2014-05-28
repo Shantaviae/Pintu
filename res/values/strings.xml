@@ -41,5 +41,6 @@
     <string name="example1">T&#464; - (human) body, form </string>
     <string name="example2">Xi&#363; - to rest </string>
     <string name="title_activity_tracing_view">TracingView</string>
+    <string name="instructions">Use one or more of the radicals provided to form as many characters as possible before time runs out!</string>
 
 </resources>
