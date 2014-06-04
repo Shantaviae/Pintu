@@ -7,4 +7,7 @@
         <ignore path="src/com/abbyy/ocrsdk/Client.java" />
         <ignore path="src/com/tangibledesign/pintu/AsyncProcessTask.java" />
     </issue>
+    <issue id="UseValueOf">
+        <ignore path="src/parser/Lexer.java" />
+    </issue>
 </lint>

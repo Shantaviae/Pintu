@@ -61,7 +61,7 @@
 		</LinearLayout>
 		
 		
-		<com.tangibledesign.pintu.DrawingView
+ 		<com.tangibledesign.pintu.DrawingView
 		    android:id="@+id/drawing"
 		    android:layout_width="fill_parent"
 		    android:layout_height="fill_parent"
@@ -72,9 +72,18 @@
 		    android:layout_marginRight="5dp"
 		    android:layout_marginTop="3dp"
 		    android:background="#FFFFFFFF" />
+		    		
 	
 	</RelativeLayout>
+	<LinearLayout
+	    android:id="@+id/test_layout"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center"
+	    android:orientation="vertical" >
+    
 
+	</LinearLayout>
 	<LinearLayout
 	    android:id="@+id/game_options_layout"
 	    android:layout_width="wrap_content"
@@ -123,7 +132,7 @@
 	    </RelativeLayout>
 	    
 	    <LinearLayout
-	    android:id="@+id/btn_layout"
+	    android:id="@+id/btn_layout1"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:layout_gravity="center"
@@ -131,8 +140,8 @@
 	    
 	       	<Button
 		    android:id="@+id/draw_btn"
-		    android:layout_width="35dp"
-		    android:layout_height="35dp"
+		    android:layout_width="50dp"
+		    android:layout_height="50dp"
 		    style="?android:attr/buttonStyleSmall"
 		    android:color="#000000"
 		    android:text="@string/icon_draw"
@@ -140,17 +149,25 @@
 	
 		    <Button
 		    android:id="@+id/erase_btn"
-		    android:layout_width="35dp"
-		    android:layout_height="35dp"
+		    android:layout_width="50dp"
+		    android:layout_height="50dp"
 		    style="?android:attr/buttonStyleSmall"
 		    android:color="#000000"
 		    android:text="@string/icon_erase"
 		    android:onClick="startEraser" />
+	   </LinearLayout>
+	   
+	   <LinearLayout
+	    android:id="@+id/btn_layout2"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center"
+	    android:orientation="horizontal" >		
 		    
 		    <Button
 		    android:id="@+id/new_btn"
-		    android:layout_width="35dp"
-		    android:layout_height="35dp"
+		    android:layout_width="50dp"
+		    android:layout_height="50dp"
 		    style="?android:attr/buttonStyleSmall"
 		    android:color="#000000"
 		    android:text="@string/icon_new"
@@ -158,8 +175,8 @@
 	
 		    <Button
 		    android:id="@+id/submit_btn"
-		    android:layout_width="35dp"
-		    android:layout_height="35dp"
+		    android:layout_width="50dp"
+		    android:layout_height="50dp"
 		    style="?android:attr/buttonStyleSmall"
 		    android:color="#000000"
 		    android:text="@string/icon_save"
