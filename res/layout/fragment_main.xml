@@ -1,12 +1,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical" 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:layout_gravity="center"
-   	android:layout_marginLeft="15dp"
-	android:layout_marginRight="15dp"
+    android:background="@drawable/background"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context="com.tangibledesign.pintu.MainActivity$PlaceholderFragment" >
+
+    <!-- android:layout_width="wrap_content"
+    android:layout_height="wrap_content" -->
+    
+   	<!-- android:layout_marginLeft="15dp"
+	android:layout_marginRight="15dp" -->
+	
     
     <ImageView
         android:id="@+id/imageViewLogo"
@@ -15,28 +22,35 @@
 		android:layout_gravity="center"
         android:contentDescription="@string/desc"
         android:src="@drawable/pintulogo4" />
-         
-	    
-     <Button
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tagline"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <Button
         android:id="@+id/buttonPlay"
         style="?android:attr/buttonStyleSmall"
-       	android:layout_width="250dp"
-        android:layout_height="40dp"
-        android:layout_marginTop = "30dp"
-    	android:gravity="center"
-        android:textSize="30sp"
-        android:textColor="#FFFFFF"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
         android:background="@drawable/green"
         android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:onClick="startGame"
         android:text="@string/play"
-        android:onClick="startGame" />
+        android:textColor="#FFFFFF"
+        android:textSize="30sp" />
 
 	<Button
         android:id="@+id/buttonScores"
         style="?android:attr/buttonStyleSmall"
        	android:layout_width="250dp"
-        android:layout_height="40dp"
-        android:layout_marginTop = "15dp"
+        android:layout_height="50dp"
+        android:layout_marginTop = "8dp"
     	android:gravity="center"
         android:textSize="30sp"
         android:textColor="#FFFFFF"
@@ -44,6 +58,20 @@
         android:fontFamily="sans-serif"
         android:text="@string/scores"
         android:onClick="showScores" />
+	
+	<Button
+        android:id="@+id/buttonInstruct"
+        style="?android:attr/buttonStyleSmall"
+       	android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop = "8dp"
+    	android:gravity="center"
+        android:textSize="30sp"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/red"
+        android:fontFamily="sans-serif"
+        android:text="@string/instruct" 
+        android:onClick="howTo"/>
 	
 
 </LinearLayout>

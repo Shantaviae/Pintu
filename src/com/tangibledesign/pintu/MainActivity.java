@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.app.ActionBar;
 import android.content.Intent;
 import android.content.res.Configuration;
 
@@ -16,6 +17,8 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActionBar actionBar = getActionBar();
+        actionBar.hide();
         setContentView(R.layout.activity_main);
 
         if (savedInstanceState == null) {
@@ -69,10 +72,17 @@ public class MainActivity extends ActionBarActivity {
     	startActivity(intent);
     }
     
-    /** Called when the user clicks the play button on the home page */
+    /** Called when the user clicks the scores button on the home page */
     public void showScores(View view) {
         //Start game (LEVEL easy) activity 
     	Intent intent = new Intent(this, ScoreActivity.class);
+    	startActivity(intent);
+    }
+    
+    /** Called when the user clicks the how to play button on the home page */
+    public void howTo(View view) {
+        //Start game (LEVEL easy) activity 
+    	Intent intent = new Intent(this, Instructions2.class);
     	startActivity(intent);
     }
     

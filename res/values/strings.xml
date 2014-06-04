@@ -6,8 +6,10 @@
     <string name="action_settings">Settings</string>
     <string name="play">Play</string>
     <string name="desc"></string>
+    <string name="tagline">helping to build your understanding of the Chinese language</string>
     <string name="learn">Learn</string>
-    <string name="scores">Scores</string>
+    <string name="scores">High Scores</string>
+    <string name="instruct">How to Play</string>
     <string name="help">Help</string>
     <string name="title_activity_easy">Easy Game</string>
     <string name="hello_world">Hello world!</string>
@@ -28,19 +30,33 @@
     <string name="icon_save">&#xf0c7;</string>
     <string name="icon_new">&#xf016;</string>
     <string name="icon_erase">&#xf12d;</string>
-    <string name="icon_draw">&#xf040;</string>    
+    <string name="icon_draw">&#xf040;</string>
     <string name="icon_next">&#xf101;</string>
     <string name="icon_wand">B</string>
     <string name="icon_clear">B</string>
     <string name="title_activity_level">Choose a level</string>
     <string name="title_activity_score">Scores</string>
     <string name="title_activity_learn">Learn Radicals</string>
-    <string name="title_activity_medium">Medium Game</string>
-    <string name="title_activity_hard">Hard Game</string>
+    <string name="title_activity_medium">Intermediate</string>
+    <string name="title_activity_hard">Hard</string>
     <string name="pinyin">M&#249; - tree, wooden</string>
     <string name="example1">T&#464; - (human) body, form </string>
     <string name="example2">Xi&#363; - to rest </string>
     <string name="title_activity_tracing_view">TracingView</string>
     <string name="instructions">Use one or more of the radicals provided to form as many characters as possible before time runs out!</string>
+    <string name="title_activity_instructions">Instructions</string>
+    <string name="I1">This game is a way for Chinese learners to reinforce what they are currently learning. 
+        Therefore, we assume that you have a basic knowledge in Chinese.</string>
+    <string name="firstline">Pair Radicals</string>
+    <string name="secondline">from the given list of radicals in order to form a character. </string>
+    <string name="noteline">Note: Some radicals on their own
+        can be considered radicals. Do you know which ones?</string>
+    <string name="thirdline">Draw the Character</string>
+    <string name="fourthline">in the designated drawing space</string>
+    <string name="fifthline">Hit Submit</string>
+    <string name="sixthline">in order to get points for your characters. You can use the other buttons to either erase,
+        clear the drawing board, or start drawing again.</string>
+    <string name="title_activity_instructions2">Instructions</string>
+    <string name="dummy_section_text">Section %1d is just a dummy section.</string>
 
 </resources>

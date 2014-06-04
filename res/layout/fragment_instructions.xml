@@ -1,0 +1,208 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.tangibledesign.pintu.Instructions$PlaceholderFragment" >
+	
+    <TabHost
+	    android:id="@android:id/tabhost"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentTop="true"
+	    android:layout_centerHorizontal="true" >
+	
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:orientation="vertical" >
+	
+	        <TabWidget
+	            android:id="@android:id/tabs"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content" >
+	        </TabWidget>
+	
+	        <FrameLayout
+	            android:id="@android:id/tabcontent"
+	            android:layout_width="match_parent"
+	            android:layout_height="match_parent" >
+	
+	            <LinearLayout
+	                android:id="@+id/tab1"
+	                android:layout_width="match_parent"
+	                android:layout_height="match_parent" 
+	                android:orientation="horizontal">
+	            </LinearLayout>
+	
+	            <LinearLayout
+	                android:id="@+id/tab2"
+	                android:layout_width="match_parent"
+	                android:layout_height="match_parent" 
+	                android:orientation="horizontal">
+	            </LinearLayout>
+	
+	            <LinearLayout
+	                android:id="@+id/tab3"
+	                android:layout_width="match_parent"
+	                android:layout_height="match_parent" 
+	                android:orientation="horizontal">
+	            </LinearLayout>
+	        </FrameLayout>
+	    </LinearLayout>
+	</TabHost>
+
+    <ScrollView
+        android:id="@+id/rules"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:layout_below="@android:id/tabhost">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/instruct"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:paddingBottom="10dp"
+                android:text="@string/I1"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="13sp" />
+
+            <!-- first bit of instructions -->
+
+            <RelativeLayout
+                android:id="@+id/rule1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/noteline"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/secondline"
+                    android:layout_toRightOf="@+id/icon"
+                    android:gravity="center_vertical"
+                    android:text="@string/noteline"
+                    android:textSize="12sp"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/firstline"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/secondline"
+                    android:layout_alignTop="@+id/icon"
+                    android:ellipsize="marquee"
+                    android:text="@string/firstline"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/secondline"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/noteline"
+                    android:layout_below="@+id/firstline"
+                    android:gravity="center_vertical"
+                    android:text="@string/secondline"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/icon"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/yellow"
+                    android:contentDescription="@string/desc"
+                    android:gravity="center_vertical|center_horizontal" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rule2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/icon2"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/yellow"
+                    android:contentDescription="@string/desc"
+                    android:gravity="center_vertical|center_horizontal" />
+
+                <TextView
+                    android:id="@+id/thirdline"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/icon2"
+                    android:layout_toRightOf="@+id/icon2"
+                    android:ellipsize="marquee"
+                    android:text="@string/thirdline"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/fourthline"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/thirdline"
+                    android:layout_below="@+id/thirdline"
+                    android:gravity="center_vertical"
+                    android:text="@string/fourthline"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rule3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/icon3"
+                    android:layout_width="50sp"
+                    android:layout_height="50sp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/yellow"
+                    android:contentDescription="@string/desc"
+                    android:gravity="center_vertical|center_horizontal" />
+
+                <TextView
+                    android:id="@+id/fifthline"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/icon3"
+                    android:ellipsize="marquee"
+                    android:text="@string/fifthline"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/sixthline"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/fifthline"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center_vertical"
+                    android:text="@string/sixthline"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
