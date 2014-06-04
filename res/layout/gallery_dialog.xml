@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    
+    <TextView
+        android:id="@+id/textDialog"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/viewSubmissions"
+        android:gravity="center"
+        android:textColor="#e67950"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"/>
+  
+    <ImageView
+        android:id="@+id/imageDialog"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:contentDescription="@string/viewSubmissions"
+        android:layout_margin="10dp"
+        android:src="@drawable/white"
+        android:layout_below="@+id/textDialog" />
+  
+     <Button
+        android:id="@+id/nextButton"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:text="@string/icon_next"
+        android:background="@drawable/button"
+        android:layout_margin="5dp"
+        android:layout_below="@+id/imageDialog"
+        android:layout_alignRight="@+id/imageDialog"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp" />
+     
+     	<Button
+        android:id="@+id/replayButton"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:text="@string/Replay"
+        android:background="@drawable/button"
+        android:layout_margin="5dp"
+        android:layout_below="@+id/imageDialog"
+        android:layout_alignLeft="@+id/imageDialog"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp" />
+     
+        <Button
+        android:id="@+id/mainMenuButton"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:text="@string/ReturntoMenu"
+        android:background="@drawable/button"
+        android:layout_margin="5dp"
+        android:layout_below="@+id/imageDialog"
+        android:layout_toRightOf="@+id/replayButton"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp" />
+      
+</RelativeLayout>

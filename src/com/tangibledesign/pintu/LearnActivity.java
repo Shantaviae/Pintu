@@ -37,6 +37,20 @@ public class LearnActivity extends ActionBarActivity {
 		btn_draw.setTypeface(font);
 		
 		drawView = (DrawingView) findViewById(R.id.drawing);
+		startGame();
+	}
+	
+	public void startGame () {
+		
+		AlertDialog.Builder newDialog = new AlertDialog.Builder(this);
+		newDialog.setTitle("Learn Instructions");
+		newDialog.setMessage("Learn more about the radicals you will be using throughout the game!");
+		newDialog.setNeutralButton("Start to Learn!", new DialogInterface.OnClickListener(){
+		    public void onClick(DialogInterface dialog, int which){
+		  
+		    }
+		});
+		newDialog.show();
 	}
 	
 	public void startDraw (View view){
