@@ -83,9 +83,9 @@ public class MediumActivity extends ActionBarActivity {
 				+ "\n\nRemember that you only have two minutes before the clock runs out!\n");
 		newDialog.setNeutralButton("Start Game!", new DialogInterface.OnClickListener(){
 		    public void onClick(DialogInterface dialog, int which){
-		    	textViewTime.setText(" 02:01"); 
+		    	textViewTime.setText(" 00:31"); 
 		        textViewScore.setText(" 0");
-		        timer = new CounterClass(121000,1000); 
+		        timer = new CounterClass(31000,1000); 
 		        timer.start();
 		    }
 		});
@@ -107,7 +107,7 @@ public class MediumActivity extends ActionBarActivity {
 		
 		score = 0;
 		
-		MediaPlayer mpCongrats = MediaPlayer.create(getApplicationContext(), R.raw.congrats);
+		MediaPlayer mpCongrats = MediaPlayer.create(getApplicationContext(), R.raw.timesup);
 		mpCongrats.start();
 		
 		AlertDialog.Builder newDialog = new AlertDialog.Builder(this);
@@ -151,9 +151,9 @@ public class MediumActivity extends ActionBarActivity {
 		//Clear results imageview
 		imgResults.setImageResource(R.drawable.clear);
 		
-		textViewTime.setText(" 02:01"); 
+    	textViewTime.setText(" 00:31"); 
         textViewScore.setText(" 0");
-        timer = new CounterClass(121000,1000); 
+        timer = new CounterClass(31000,1000); 
         timer.start();
 		
 	}
@@ -258,6 +258,10 @@ public class MediumActivity extends ActionBarActivity {
 				imgResults.setImageURI(Uri.parse(imgSaved));
 				
 				if(imgSaved!=null){
+					
+					MediaPlayer mpCongrats = MediaPlayer.create(getApplicationContext(), R.raw.congrats);
+					mpCongrats.start();
+					
 				    Toast savedToast = Toast.makeText(getApplicationContext(), "Correct!", Toast.LENGTH_SHORT);
 				    
 				    addScore();
@@ -329,7 +333,6 @@ public class MediumActivity extends ActionBarActivity {
 			//Says time up in Chinese but conflicts with the congratulations! must be fixed in later version
 			//MediaPlayer mpCongrats = MediaPlayer.create(getApplicationContext(), R.raw.timesup);
 			//mpCongrats.start();
-			textViewTime.setText(" 00:00"); 
 			//Conflicts with the end of the game dialog
 			//Toast timeUpToast = Toast.makeText(getApplicationContext(), 
 			//        "Time's Up!", Toast.LENGTH_LONG);
