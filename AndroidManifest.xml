@@ -90,8 +90,7 @@
         </activity>
         <activity
             android:name="com.tangibledesign.pintu.Instructions2"
-            android:label="@string/title_activity_instructions2" 
-            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_instructions2"
             android:parentActivityName="com.tangibledesign.pintu.MainActivity"
             android:screenOrientation="landscape" >
             <meta-data
