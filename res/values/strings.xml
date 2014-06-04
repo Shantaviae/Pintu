@@ -27,7 +27,7 @@
     <string name="timerTitle">Time: </string>
     <string name="scoreTitle">Score: </string>
     <string name="resultsTitle">Results</string>
-    <string name="icon_save">&#xf0c7;</string>
+    <string name="icon_save">&#xf00c;</string>
     <string name="icon_new">&#xf016;</string>
     <string name="icon_erase">&#xf12d;</string>
     <string name="icon_draw">&#xf040;</string>
@@ -44,6 +44,7 @@
     <string name="example2">Xi&#363; - to rest </string>
     <string name="title_activity_tracing_view">TracingView</string>
     <string name="instructions">Use one or more of the radicals provided to form as many characters as possible before time runs out!</string>
+<<<<<<< HEAD
     <string name="title_activity_instructions">Instructions</string>
     <string name="I1">This game is a way for Chinese learners to reinforce what they are currently learning. 
         Therefore, we assume that you have a basic knowledge in Chinese.</string>
@@ -59,4 +60,9 @@
     <string name="title_activity_instructions2">Instructions</string>
     <string name="dummy_section_text">Section %1d is just a dummy section.</string>
 
+=======
+	<string name="viewSubmissions">View the correct submissions from your game!</string>
+	<string name="ReturntoMenu">Menu</string>
+	<string name="Replay">Replay</string>
+>>>>>>> FETCH_HEAD
 </resources>

@@ -29,6 +29,8 @@ public class DrawingView extends View {
 	
 	private boolean erase=false;
 	
+	private boolean draw =true;
+	
 	public DrawingView(Context context, AttributeSet attrs){
 	    super(context, attrs);
 	    setupDrawing();
@@ -47,6 +49,22 @@ public class DrawingView extends View {
 			//drawPaint.setXfermode(null);
 			drawPaint.setColor(Color.BLACK);
 			drawPaint.setStrokeWidth(10);
+		}
+	}
+	
+	public void setDraw(boolean isDraw){
+		//set erase true or false
+		draw=isDraw;
+		
+		//alter the Paint object to erase or switch back to drawing:
+		if(draw) {
+			//drawPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+			drawPaint.setColor(Color.BLACK);
+			drawPaint.setStrokeWidth(10);
+		} else { 
+			//drawPaint.setXfermode(null);
+			drawPaint.setColor(Color.BLACK);
+			drawPaint.setStrokeWidth(0);
 		}
 	}
 	

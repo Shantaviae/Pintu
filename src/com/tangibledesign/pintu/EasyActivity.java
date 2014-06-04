@@ -1,22 +1,24 @@
 package com.tangibledesign.pintu;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
+import java.io.File;
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.UUID;
 
 import android.support.v7.app.ActionBarActivity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.os.Environment;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.provider.MediaStore;
@@ -28,6 +30,9 @@ import android.annotation.TargetApi;
 import android.os.Build; 
 import android.graphics.Typeface;
 
+import com.tangibledesign.pintu.R;
+
+
 @SuppressLint("NewApi")
 public class EasyActivity extends ActionBarActivity {
 
@@ -35,24 +40,20 @@ public class EasyActivity extends ActionBarActivity {
 	public DrawingView drawView;
 	TextView textViewTime;
 	TextView textViewScore;
-	TextView tv;
 	public int score = 0;
 	CounterClass timer;
-	EasyActivity eAct;
-	
-	/**public static final String DCIM = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString();
-    public static final String DIRECTORY = DCIM + "/Camera";
-	private String imgUrl = DIRECTORY + "/TestRad.jpg";**/
-	private String resultUrl = "result.txt";
+	Typeface font;
+	public ArrayList<String> gameImgs = new ArrayList<String>(); 
+	ImageView imgResults;
+	int index = 0;	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_easy);
 		
-		eAct = this;
 		
-		Typeface font = Typeface.createFromAsset( getAssets(), "FontAwesome.otf" );
+		font = Typeface.createFromAsset( getAssets(), "FontAwesome.otf" );
 		
 		Button btn_clear = (Button)findViewById( R.id.new_btn );
 		Button btn_save = (Button)findViewById( R.id.submit_btn );
@@ -68,23 +69,148 @@ public class EasyActivity extends ActionBarActivity {
 		
 		textViewTime = (TextView)findViewById(R.id.timer);  
 		textViewScore = (TextView)findViewById(R.id.score); 
-		tv = (TextView)findViewById(R.id.results);
 		
-        textViewTime.setText(" 2:01"); 
-        textViewScore.setText(" 0");
-        timer = new CounterClass(121000,1000); 
-        timer.start();
+		imgResults = (ImageView)findViewById(R.id.results);
+		
+		startGame();
+	}
+	
+	public void startGame () {
+		
+		AlertDialog.Builder newDialog = new AlertDialog.Builder(this);
+		newDialog.setTitle("Game Instructions");
+		newDialog.setMessage("Use one or more of the radical(s) provided to form as many characters as possible!"
+				+ "\n\nRemember that you only have two minutes before the clock runs out!\n");
+		newDialog.setNeutralButton("Start Game!", new DialogInterface.OnClickListener(){
+		    public void onClick(DialogInterface dialog, int which){
+		    	textViewTime.setText(" 02:01"); 
+		        textViewScore.setText(" 0");
+		        timer = new CounterClass(121000,1000); 
+		        timer.start();
+		    }
+		});
+		newDialog.show();
 	}
 	
 	public void startDraw (View view){
 		drawView.setErase(false);
-		
 	}
 	
 	public void startEraser (View view){
 		drawView.setErase(true);
 	}
 
+	public void endGame() {
+		
+		drawView.setErase(true);
+		drawView.setDraw(false);
+		
+		score = 0;
+		
+		MediaPlayer mpCongrats = MediaPlayer.create(getApplicationContext(), R.raw.congrats);
+		mpCongrats.start();
+		
+		AlertDialog.Builder newDialog = new AlertDialog.Builder(this);
+		newDialog.setTitle("Time is up! 时间长达! (Shíjiān zhǎng dá)");
+		newDialog.setMessage("Congratulations! 恭喜! (Gōngxǐ) \nYour score is " + score + ".\n\n Would you like to play again?");
+		newDialog.setPositiveButton("Replay", new DialogInterface.OnClickListener(){
+		    public void onClick(DialogInterface dialog, int which){
+		    	clearSavedImgs();
+		    	restartGame();
+		    }
+		});
+		/*newDialog.setNeutralButton("Review submissions", new DialogInterface.OnClickListener(){
+		    public void onClick(DialogInterface dialog, int which){
+		    	displaySubmissions();
+		    }
+		});*/
+		newDialog.setNegativeButton("Return to Menu", new DialogInterface.OnClickListener(){
+		    public void onClick(DialogInterface dialog, int which){
+		    	clearSavedImgs();
+		    	returnToMenu();
+		    }
+		});
+		newDialog.show();
+		
+	}
+	
+	/** Called when the user clicks the Return to Menu button on the play page */
+    public void returnToMenu() {
+        //Start game by taking the user to choose which level they want to begin at
+    	Intent intent = new Intent(this, LevelActivity.class);
+    	startActivity(intent);
+    }
+	
+	public void restartGame(){
+		
+		//Delete arrayList of paths to images saved
+		gameImgs.clear();
+		drawView.setErase(false);
+		drawView.setDraw(true);
+		
+		//Clear results imageview
+		imgResults.setImageResource(R.drawable.clear);
+		
+		textViewTime.setText(" 02:01"); 
+        textViewScore.setText(" 0");
+        timer = new CounterClass(121000,1000); 
+        timer.start();
+		
+	}
+	
+	public void displaySubmissions(){
+		
+		// Create custom dialog object
+        final Dialog dialog = new Dialog(EasyActivity.this);
+        
+        // Include dialog.xml file
+        dialog.setContentView(R.layout.gallery_dialog);
+        // Set dialog title
+        dialog.setTitle("Submmisson Gallery");
+        
+        Button next_btn = (Button)findViewById( R.id.nextButton);
+        Button main_btn = (Button) dialog.findViewById(R.id.mainMenuButton);
+        Button replay_btn = (Button) dialog.findViewById(R.id.replayButton);
+        
+        next_btn.setTypeface(font);
+
+        // set values for custom dialog components - text, image and button
+        ImageView image = (ImageView) dialog.findViewById(R.id.imageDialog);
+        image.setImageURI(Uri.parse(gameImgs.get(index)));
+
+        dialog.show();
+         
+        
+        // if decline button is clicked, close the custom dialog
+        next_btn.setOnClickListener(myhandler);
+        main_btn.setOnClickListener(myhandler);
+        replay_btn.setOnClickListener(myhandler);
+        
+	}
+	
+	View.OnClickListener myhandler = new View.OnClickListener() {
+		  public void onClick(View v) {
+		      switch(v.getId()) {
+		        case R.id.nextButton:
+		          // it was the next button
+		          break;
+		        case R.id.mainMenuButton:
+		          // it was the main menu button
+		          break;
+		        case R.id.replayButton:
+			      // it was the replay button
+			      break;
+		      }
+		  }
+		};
+	public void clearSavedImgs() {
+		
+		for (int i = 0; i < gameImgs.size(); i++){
+			File image = new File(gameImgs.get(i)); 
+			image.delete();
+		}
+	}
+	
 	@Override
 	protected void onPause() {
 		super.onPause();
@@ -122,14 +248,14 @@ public class EasyActivity extends ActionBarActivity {
 		saveDialog.setMessage("Submit character?");
 		saveDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener(){
 		    public void onClick(DialogInterface dialog, int which){
-		        //save drawing
+		        
+		    	//save drawing
 		    	drawView.setDrawingCacheEnabled(true);
 				String imgSaved = MediaStore.Images.Media.insertImage(
 					    getContentResolver(), drawView.getDrawingCache(),
 					    UUID.randomUUID().toString()+".png", "drawing");
-				
-				//deleteFile(resultUrl);
-				//new AsyncProcessTask(eAct).execute(imgUrl, resultUrl);
+				gameImgs.add(imgSaved);
+				imgResults.setImageURI(Uri.parse(imgSaved));
 				
 				if(imgSaved!=null){
 				    Toast savedToast = Toast.makeText(getApplicationContext(), "Correct!", Toast.LENGTH_SHORT);
@@ -141,8 +267,10 @@ public class EasyActivity extends ActionBarActivity {
 				    drawView.setErase(false);
 				}
 				else{
+					MediaPlayer mpCongrats = MediaPlayer.create(getApplicationContext(), R.raw.wronganswer);
+					mpCongrats.start();
 				    Toast unsavedToast = Toast.makeText(getApplicationContext(), 
-				        "Incorrect! Try again!", Toast.LENGTH_SHORT);
+				        "Incorrect! 答错了! (Dá cuòle)", Toast.LENGTH_SHORT);
 				    unsavedToast.show();
 				}
 		    }
@@ -198,10 +326,15 @@ public class EasyActivity extends ActionBarActivity {
 		
 		@Override 
 		public void onFinish() { 
+			//Says time up in Chinese but conflicts with the congratulations! must be fixed in later version
+			//MediaPlayer mpCongrats = MediaPlayer.create(getApplicationContext(), R.raw.timesup);
+			//mpCongrats.start();
 			textViewTime.setText(" 00:00"); 
-			Toast timeUpToast = Toast.makeText(getApplicationContext(), 
-			        "Time's Up!", Toast.LENGTH_LONG);
-			    timeUpToast.show();
+			//Conflicts with the end of the game dialog
+			//Toast timeUpToast = Toast.makeText(getApplicationContext(), 
+			//        "Time's Up!", Toast.LENGTH_LONG);
+			//timeUpToast.show();
+			endGame();
 		} 
 		
 		@SuppressLint("NewApi") 
@@ -214,44 +347,7 @@ public class EasyActivity extends ActionBarActivity {
 					- TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis))); 
 			textViewTime.setText(ms); 
 		} 
+		
 	} 
 	
-	
-	public void updateResults() {
-		try {
-			StringBuffer contents = new StringBuffer();
-
-			FileInputStream fis = openFileInput(resultUrl);
-			Reader reader = new InputStreamReader(fis, "UTF-8");
-			BufferedReader bufReader = new BufferedReader(reader);
-			String text = null;
-			while ((text = bufReader.readLine()) != null) {
-				contents.append(text).append(System.getProperty("line.separator"));
-			}
-
-			//displayMessage(contents.toString());
-		} catch (Exception e) {
-			//displayMessage("Error: " + e.getMessage());
-		}
-	}
-	
-	/*private void displayMessage( String text )
-	{
-		tv.post( new MessagePoster( text ) );
-	}
-	
-	class MessagePoster implements Runnable {
-		public MessagePoster( String message )
-		{
-			_message = message;
-		}
-
-		public void run() {
-			tv.append( _message + "\n" );
-			setContentView( tv );
-		}
-
-		private final String _message;
-	}
-	*/
 }
