@@ -24,6 +24,8 @@ import android.annotation.TargetApi;
 import android.os.Build; 
 import android.graphics.Typeface;
 
+import com.tangibledesign.pintu.R;
+
 public class HardActivity extends ActionBarActivity {
 
 	//custom drawing view
