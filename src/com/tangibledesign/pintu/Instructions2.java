@@ -42,9 +42,9 @@ public class Instructions2 extends FragmentActivity implements ActionBar.TabList
 	        // Set up the action bar.
 	        final ActionBar actionBar = getActionBar();
 
-	        // Specify that the Home/Up button should not be enabled, since there is no hierarchical
-	        // parent.
-	        actionBar.setHomeButtonEnabled(false);
+//	        // Specify that the Home/Up button should not be enabled, since there is no hierarchical
+//	        // parent.
+//	        actionBar.setHomeButtonEnabled(t);
 
 	        // Specify that we will be displaying tabs in the action bar.
 	        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);

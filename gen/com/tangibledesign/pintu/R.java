@@ -858,10 +858,11 @@ containing a value of this type.
         public static final int abc_split_action_bar_is_narrow=0x7f070002;
     }
     public static final class color {
-        public static final int abc_search_url_text_holo=0x7f080003;
+        public static final int abc_search_url_text_holo=0x7f080004;
         public static final int abc_search_url_text_normal=0x7f080000;
         public static final int abc_search_url_text_pressed=0x7f080002;
         public static final int abc_search_url_text_selected=0x7f080001;
+        public static final int coral=0x7f080003;
     }
     public static final class dimen {
         /**  Default height of an action bar. 
@@ -1118,15 +1119,17 @@ containing a value of this type.
         public static final int red=0x7f020079;
         public static final int rest=0x7f02007a;
         public static final int round=0x7f02007b;
-        public static final int save=0x7f02007c;
-        public static final int scores=0x7f02007d;
-        public static final int sun=0x7f02007e;
-        public static final int tree=0x7f02007f;
-        public static final int tree_trace=0x7f020080;
-        public static final int water=0x7f020081;
-        public static final int white=0x7f020082;
-        public static final int woman=0x7f020083;
-        public static final int yellow=0x7f020084;
+        public static final int round2=0x7f02007c;
+        public static final int round3=0x7f02007d;
+        public static final int save=0x7f02007e;
+        public static final int scores=0x7f02007f;
+        public static final int sun=0x7f020080;
+        public static final int tree=0x7f020081;
+        public static final int tree_trace=0x7f020082;
+        public static final int water=0x7f020083;
+        public static final int white=0x7f020084;
+        public static final int woman=0x7f020085;
+        public static final int yellow=0x7f020086;
     }
     public static final class id {
         public static final int action_bar=0x7f06001c;
@@ -1140,16 +1143,16 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f060016;
         public static final int action_menu_presenter=0x7f060017;
         public static final int action_mode_close_button=0x7f060024;
-        public static final int action_settings=0x7f060090;
+        public static final int action_settings=0x7f060091;
         public static final int activity_chooser_view_content=0x7f060025;
         public static final int always=0x7f06000b;
         public static final int beginning=0x7f060011;
         public static final int body=0x7f06003d;
         public static final int btn_layout1=0x7f06004a;
         public static final int btn_layout2=0x7f06004d;
-        public static final int buttonInstruct=0x7f06007e;
-        public static final int buttonPlay=0x7f06007c;
-        public static final int buttonScores=0x7f06007d;
+        public static final int buttonInstruct=0x7f06007f;
+        public static final int buttonPlay=0x7f06007d;
+        public static final int buttonScores=0x7f06007e;
         public static final int checkbox=0x7f06002d;
         public static final int collapseActionView=0x7f06000d;
         public static final int container=0x7f06003c;
@@ -1172,7 +1175,7 @@ containing a value of this type.
         public static final int firstline=0x7f06006e;
         public static final int fourthline=0x7f060072;
         public static final int game_options_layout=0x7f060043;
-        public static final int helpLinearLay=0x7f060088;
+        public static final int helpLinearLay=0x7f060089;
         public static final int home=0x7f060014;
         public static final int homeAsUp=0x7f060005;
         public static final int icon=0x7f06002a;
@@ -1180,13 +1183,13 @@ containing a value of this type.
         public static final int icon3=0x7f060074;
         public static final int ifRoom=0x7f06000a;
         public static final int image=0x7f060027;
-        public static final int imageDialog=0x7f06008c;
-        public static final int imageViewHelp=0x7f06008a;
-        public static final int imageViewLearn=0x7f060084;
-        public static final int imageViewLogo=0x7f06007b;
-        public static final int imageViewPlay=0x7f060081;
-        public static final int imageViewScores=0x7f060087;
-        public static final int learnLinearLay=0x7f060082;
+        public static final int imageDialog=0x7f06008d;
+        public static final int imageViewHelp=0x7f06008b;
+        public static final int imageViewLearn=0x7f060085;
+        public static final int imageViewLogo=0x7f06007c;
+        public static final int imageViewPlay=0x7f060082;
+        public static final int imageViewScores=0x7f060088;
+        public static final int learnLinearLay=0x7f060083;
         public static final int learnPinyin=0x7f06005e;
         public static final int learnRadical=0x7f06005d;
         public static final int listMode=0x7f060001;
@@ -1195,18 +1198,18 @@ containing a value of this type.
         public static final int lvl_hard=0x7f06007a;
         public static final int lvl_learn=0x7f060077;
         public static final int lvl_med=0x7f060079;
-        public static final int mainMenuButton=0x7f06008f;
+        public static final int mainMenuButton=0x7f060090;
         public static final int middle=0x7f060012;
         public static final int never=0x7f060009;
         public static final int new_btn=0x7f06004f;
-        public static final int nextButton=0x7f06008d;
+        public static final int nextButton=0x7f06008e;
         public static final int next_btn=0x7f06005f;
         public static final int none=0x7f060010;
         public static final int normal=0x7f060000;
         public static final int noteline=0x7f06006c;
         public static final int pager=0x7f06005c;
         public static final int phraseExample=0x7f060060;
-        public static final int playLinearLay=0x7f06007f;
+        public static final int playLinearLay=0x7f060080;
         public static final int progress_circular=0x7f060018;
         public static final int progress_horizontal=0x7f060019;
         public static final int radical1=0x7f06003f;
@@ -1224,7 +1227,7 @@ containing a value of this type.
         public static final int radical_layout1=0x7f06003e;
         public static final int radical_layout2=0x7f060055;
         public static final int radio=0x7f06002f;
-        public static final int replayButton=0x7f06008e;
+        public static final int replayButton=0x7f06008f;
         public static final int results=0x7f060051;
         public static final int resultsLayout=0x7f060050;
         public static final int rule1=0x7f06006b;
@@ -1234,7 +1237,7 @@ containing a value of this type.
         public static final int score=0x7f060049;
         public static final int scoreLayout=0x7f060047;
         public static final int scoreTitle=0x7f060048;
-        public static final int scoresLinearLay=0x7f060085;
+        public static final int scoresLinearLay=0x7f060086;
         public static final int search_badge=0x7f060032;
         public static final int search_bar=0x7f060031;
         public static final int search_button=0x7f060033;
@@ -1258,18 +1261,19 @@ containing a value of this type.
         public static final int tab2=0x7f060066;
         public static final int tab3=0x7f060067;
         public static final int tabMode=0x7f060002;
-        public static final int textDialog=0x7f06008b;
+        public static final int textDialog=0x7f06008c;
         public static final int textView1=0x7f060069;
         public static final int textView2=0x7f06006a;
-        public static final int textViewHelp=0x7f060089;
-        public static final int textViewLearn=0x7f060083;
-        public static final int textViewPlay=0x7f060080;
-        public static final int textViewScores=0x7f060086;
+        public static final int textViewHelp=0x7f06008a;
+        public static final int textViewLearn=0x7f060084;
+        public static final int textViewPlay=0x7f060081;
+        public static final int textViewScores=0x7f060087;
         public static final int thirdline=0x7f060071;
         public static final int timer=0x7f060046;
         public static final int timerLayout=0x7f060044;
         public static final int timerTitle=0x7f060045;
         public static final int title=0x7f06002b;
+        public static final int top=0x7f06007b;
         public static final int top_action_bar=0x7f060020;
         public static final int up=0x7f060021;
         public static final int useLogo=0x7f060003;
